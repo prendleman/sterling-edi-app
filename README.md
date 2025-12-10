@@ -8,6 +8,18 @@ A lightweight Python proof-of-concept demonstrating EDI processing patterns rele
 
 > **Operating Model Focus** - This POC models Sterling-style orchestration and operating-model concepts; in a real environment I would leverage Sterling and/or an established EDI provider for production mappings and partner certifications.
 
+## What This Is (In One Screen)
+
+**Purpose:** Learning/portfolio POC for Sterling-style EDI operating model
+
+**Tier 1 Demo:** X12 850/855/856/810 parsing + validation + exception patterns
+
+**Shows:** Monitoring/metrics + Power BI-style visibility
+
+**Not:** Production EDI translator or Sterling replacement
+
+**Why It Matters:** Reduces exceptions, speeds partner onboarding, protects order-to-cash
+
 ## 🚀 Quick Start for Reviewers
 
 **New to this package?** Start here:
@@ -76,8 +88,8 @@ graph LR
 ### Tier 3 – Future/Roadmap
 - **EDIFACT Transformation**: Full X12 ↔ EDIFACT conversion
 - **AI-Assisted Validations**: Machine learning validation patterns
-- **eCommerce Adapters**: Production-ready Shopify/Magento/WooCommerce connectors
-- **Advanced Monitoring**: Production-grade alerting and SLA tracking
+- **eCommerce Adapters**: Production-style Shopify/Magento/WooCommerce connector patterns (roadmap)
+- **Advanced Monitoring**: Production-style alerting and SLA tracking patterns (roadmap)
 
 ## Operating Model Focus
 
@@ -108,10 +120,10 @@ This POC demonstrates key operating model concepts for reliable EDI flows:
 - **810**: Invoice
 - **856**: Ship Notice/Manifest
 
-### EDIFACT
-- **ORDERS**: Purchase Order
-- **DESADV**: Despatch Advice
-- **INVOIC**: Invoice
+### EDIFACT (Parsing Demonstrated, Not Full Implementation)
+- **ORDERS**: Purchase Order (parsing patterns demonstrated)
+- **DESADV**: Despatch Advice (parsing patterns demonstrated)
+- **INVOIC**: Invoice (parsing patterns demonstrated)
 
 ## Deployment Options
 
@@ -154,7 +166,7 @@ docker-compose up
 ### Prerequisites
 
 - Python 3.8 or higher
-- IBM Sterling B2B Integrator (for integration features)
+- **Optional:** IBM Sterling B2B Integrator (only needed to exercise illustrative integration patterns)
 
 ### Installation
 
@@ -281,52 +293,24 @@ sterling_edi_app/
     └── API_REFERENCE.md
 ```
 
-## Acumatica ERP & CRM Integration
+## Acumatica ERP & CRM Integration (Illustrative)
 
-The application includes a comprehensive Acumatica ERP and CRM connector:
+This module demonstrates integration patterns for Acumatica ERP/CRM (Tier 2). It is a demonstration scaffold and not production-certified.
 
-### ERP Functionality
-- **REST API Integration**: Full Acumatica REST API client
-- **EDI Transaction Sync**: Automatically sync EDI 850 (PO) and 810 (Invoice) to Acumatica
-- **Sales Orders**: Create and manage sales orders
-- **Purchase Orders**: Create and manage purchase orders
-- **Inventory Management**: Query inventory items and quantities
-- **Customer/Vendor Management**: Access customer and vendor data
-- **Financial Transactions**: Query AR/AP transactions
+**Key Patterns Demonstrated:**
+- Illustrative Acumatica REST client patterns
+- Demonstrates patterns for syncing EDI 850 (PO) and 810 (Invoice) to Acumatica
+- ERP integration patterns (Sales Orders, Purchase Orders, Inventory)
+- CRM integration patterns (Contacts, Opportunities, Activities)
+- EDI-to-CRM sync patterns (demonstration only)
 
-### CRM Functionality (Acumatica Built-in CRM)
-- **Contacts**: Create, read, and manage contacts
-- **Opportunities**: Full opportunity lifecycle management (create, update, pipeline tracking)
-- **Activities**: Log calls, meetings, tasks, and EDI processing activities
-- **Cases**: Create and manage support cases
-- **Leads**: Lead management with conversion to opportunities
-- **Accounts**: Account management with 360-degree view
-- **Sales Pipeline**: Pipeline summary and analytics
-- **Account 360 View**: Combined CRM + ERP data for comprehensive account insights
-
-### CRM Integration Features
-- **EDI-to-CRM Sync**: Automatically sync EDI customer data to CRM contacts/accounts
-- **Opportunity Creation**: Create CRM opportunities from EDI 850 Purchase Orders
-- **Activity Logging**: Automatically log EDI processing as CRM activities
-- **Account 360 View**: Get complete account view combining CRM and ERP data
-
-### Configuration
-
-Edit `config/acumatica_config.yaml`:
-```yaml
-acumatica:
-  enabled: true
-  base_url: "https://your-acumatica-instance.com"
-  username: "your_username"
-  password: "your_password"
-  auto_sync: true  # Auto-sync EDI transactions
-```
+**See:** [docs/ACUMATICA_INTEGRATION.md](docs/ACUMATICA_INTEGRATION.md) for detailed functionality and configuration.
 
 ## Power BI Dashboards
 
 ### EDI Processing Dashboard
 
-The application includes a Power BI dashboard generator that creates comprehensive visualizations of EDI processing metrics:
+The application includes a Power BI dashboard generator that creates visualizations of EDI processing metrics:
 
 - **Pass/Fail Metrics**: Success rates, failure analysis
 - **Transaction Analytics**: Breakdown by transaction type (850, 855, 810, etc.)

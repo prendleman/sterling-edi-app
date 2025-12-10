@@ -74,8 +74,8 @@ graph TB
 ### Tier 3 – Future/Roadmap
 - **EDIFACT Transformation**: Full X12 ↔ EDIFACT conversion
 - **AI-Assisted Validations**: Machine learning validation patterns
-- **eCommerce Adapters**: Production-ready Shopify/Magento/WooCommerce connectors
-- **Advanced Monitoring**: Production-grade alerting and SLA tracking
+- **eCommerce Adapters**: Production-style Shopify/Magento/WooCommerce connector patterns (roadmap)
+- **Advanced Monitoring**: Production-style alerting and SLA tracking patterns (roadmap)
 
 ## Operating Model Focus
 
