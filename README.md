@@ -347,18 +347,6 @@ For detailed deployment instructions, see [DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
 This application is provided as-is for demonstration and portfolio purposes.
 
-## Power BI Dashboard
-
-The application includes automated Power BI dashboard generation. See [docs/DASHBOARD.md](docs/DASHBOARD.md) for detailed instructions.
-
-Quick start:
-```bash
-# Generate dashboard with sample data
-python main.py dashboard --generate-sample-metrics
-
-# Generate dashboard with real metrics
-python main.py dashboard
-```
 
 ## Support
 
