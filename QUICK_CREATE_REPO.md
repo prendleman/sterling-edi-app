@@ -76,7 +76,7 @@ Dear Bill,
 
 Thank you for taking the time to speak with me today about the IT Director position at Federated Group.
 
-As we discussed, I've prepared a comprehensive portfolio piece demonstrating my capabilities with IBM Sterling, EDI processing, and IT leadership. The complete application is available on GitHub:
+As we discussed, I've prepared a learning POC that demonstrates how I approach EDI concepts and operating model thinking. The portfolio piece is available on GitHub:
 
 Repository: https://github.com/BlackLake420/sterling-edi-app
 
@@ -86,8 +86,8 @@ You can view it immediately - no account needed! The repository includes:
 - Power BI dashboard generation
 - Acumatica ERP/CRM integration
 - Complete IT leadership framework
-- Comprehensive documentation (22 guides)
-- Production-ready code with Docker deployment
+- Documentation covering operating model concepts (22 guides)
+- POC-level code demonstrating patterns (Docker deployment included)
 
 To get started:
 1. Visit: https://github.com/BlackLake420/sterling-edi-app
