@@ -1,15 +1,17 @@
 # Executive Summary
-## IBM Sterling EDI Application - Portfolio Demonstration
+## Sterling-Style EDI Processing POC - Portfolio Demonstration
 
-**Prepared for:** Federated Group IT Director Position  
+**Project Type:** Independent Learning / Portfolio POC  
 **Date:** December 2025  
-**Purpose:** Demonstrate technical leadership, EDI expertise, and enterprise application development capabilities
+**Purpose:** Demonstrate rapid learning capability, EDI concept understanding, and operating model thinking for reliable trading-partner flows
+
+> **Non-Affiliation Disclaimer:** This project is independent and is not affiliated with, endorsed by, or created at the request of any company, including Federated Group or IBM.
 
 ---
 
 ## Overview
 
-This comprehensive EDI processing application was developed specifically to demonstrate capabilities relevant to the Federated Group IT Director role. It showcases hands-on technical leadership, enterprise architecture skills, and deep understanding of IBM Sterling B2B Integrator environments.
+This proof-of-concept demonstrates how I approach learning EDI concepts and the operating model behind reliable trading-partner flows. It models Sterling-style orchestration patterns and is not production-ready, nor is it a replacement for IBM Sterling B2B Integrator. In a real environment, I would leverage Sterling and/or an established EDI provider for production mappings and partner certifications.
 
 ### High-Level Architecture
 
@@ -53,15 +55,48 @@ graph TB
     EDIProcessor --> Monitoring
 ```
 
+## Capability Tiers
+
+### Tier 1 – Implemented for Demo
+- **X12 Parsing**: 850/855/856/810 transaction parsing and data extraction
+- **Validation**: Syntax and business rule validation with detailed error reporting
+- **Exception Handling**: Error handling patterns and retry logic
+- **Metrics Collection**: Processing metrics and performance tracking
+- **Power BI Dashboards**: Automated dashboard generation for metrics visualization
+- **File Monitoring**: Directory monitoring patterns for file processing
+
+### Tier 2 – Stubbed/Illustrative
+- **Sterling API Integration**: REST API client patterns (illustrative, not production-certified)
+- **Acumatica Sync**: ERP/CRM integration patterns (demonstration only)
+- **SQL Server Integration**: Data warehouse export patterns
+- **Security Audit**: Audit logging and compliance reporting patterns
+
+### Tier 3 – Future/Roadmap
+- **EDIFACT Transformation**: Full X12 ↔ EDIFACT conversion
+- **AI-Assisted Validations**: Machine learning validation patterns
+- **eCommerce Adapters**: Production-ready Shopify/Magento/WooCommerce connectors
+- **Advanced Monitoring**: Production-grade alerting and SLA tracking
+
+## Operating Model Focus
+
+This POC demonstrates key operating model concepts for reliable EDI flows:
+
+- **Trading Partner Onboarding**: Checklist and validation patterns
+- **Test Harness**: Automated testing for EDI transactions
+- **Exception Ownership**: Error handling, retry logic, and SLA patterns
+- **Master Data Dependencies**: Data validation and relationship awareness
+- **Monitoring KPIs**: Failure rate tracking, time-to-reprocess metrics, partner readiness indicators
+- **Reliability Patterns**: Logging, monitoring, and operational visibility
+
 ## Key Highlights
 
-### 🎯 **Directly Relevant to Federated Group**
-- **IBM Sterling B2B Integrator** integration (file system & API)
-- **EDI Processing** for X12 and EDIFACT standards
+### 🎯 **Sterling-Style Patterns Demonstrated**
+- **IBM Sterling B2B Integrator** integration patterns (file system & API)
+- **EDI Processing** for X12 and EDIFACT standards (Tier 1: X12 fully implemented)
 - **Power BI Dashboards** for executive reporting
-- **Acumatica ERP/CRM** integration
-- **eCommerce** connector framework
-- **SQL Server** data warehouse integration
+- **Acumatica ERP/CRM** integration patterns (illustrative)
+- **eCommerce** connector framework (roadmap)
+- **SQL Server** data warehouse integration patterns
 
 ### 💼 **IT Leadership Capabilities**
 - **Strategic Planning**: Technology roadmap, capacity planning, disaster recovery
@@ -144,11 +179,11 @@ mindmap
         Security Best Practices
 ```
 
-1. **Production-Ready**: Not a demo - includes logging, error handling, monitoring, deployment scripts
-2. **Comprehensive**: 22+ documentation guides covering all aspects of IT leadership
-3. **Branded**: Customized for Federated Group with official logo and branding
-4. **Complete**: From code to documentation to deployment to operations
-5. **Scalable**: Designed for enterprise environments with Docker, monitoring, and CI/CD
+1. **Learning-Focused POC**: Demonstrates rapid ramp-up capability and operating model thinking
+2. **Tiered Capabilities**: Clear separation between implemented demo features, stubbed patterns, and future roadmap
+3. **Operating Model Focus**: Emphasizes trading partner onboarding, exception handling, SLA patterns, and monitoring KPIs
+4. **Honest Scope**: Acknowledges POC-level implementation, not production-ready
+5. **Leadership Perspective**: Shows how I think about making EDI "boring and reliable" through proper operating models
 
 ### Integration Ecosystem
 
@@ -197,27 +232,23 @@ graph LR
 | **Deployment Options** | 3 (Docker, Windows, Linux) |
 | **Development Time** | 40+ hours |
 
-## Immediate Use Cases
+## Demonstration Use Cases
 
-1. **EDI Processing**: Process X12/EDIFACT files from trading partners
-2. **Sterling Integration**: Connect with IBM Sterling B2B Integrator
-3. **Dashboard Generation**: Create Power BI dashboards automatically
-4. **ERP Integration**: Connect with Acumatica for order/inventory management
-5. **eCommerce**: Framework for Shopify, Magento, WooCommerce integration
-6. **Reporting**: SQL Server data warehouse exports and reporting
+1. **EDI Processing Patterns**: Demonstrate X12 parsing and validation patterns
+2. **Sterling-Style Integration**: Model file system and API integration patterns
+3. **Dashboard Generation**: Create Power BI dashboards automatically from metrics
+4. **ERP Integration Patterns**: Illustrate Acumatica sync concepts (not production-ready)
+5. **eCommerce Framework**: Show connector architecture (roadmap item)
+6. **Reporting Patterns**: Demonstrate SQL Server data warehouse export patterns
 
 ## Next Steps
 
-1. **Review**: Start with `README.md` for overview
+1. **Review**: Start with `README.md` for overview and capability tiers
 2. **Quick Test**: Follow `QUICK_START.md` for immediate demonstration
-3. **Deploy**: Use `docs/DEPLOYMENT.md` for production setup
-4. **Explore**: Review `docs/` directory for comprehensive guides
-
-## Contact
-
-For questions about this portfolio piece or to discuss how these capabilities align with Federated Group's needs, please reach out.
+3. **Explore**: Review `docs/` directory for operating model concepts
+4. **Understand Scope**: Review capability tiers to see what's implemented vs. illustrative
 
 ---
 
-*This portfolio piece demonstrates both technical depth and strategic IT leadership capabilities. All code is original and created specifically to showcase relevant skills for the IT Director role at Federated Group.*
+*This POC demonstrates how I approach learning new domains and thinking about operating models. It is not production-ready and is not a replacement for IBM Sterling B2B Integrator or other established EDI providers. In a real environment, I would leverage Sterling and/or established EDI providers for production mappings and partner certifications.*
 

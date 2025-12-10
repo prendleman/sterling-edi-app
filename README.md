@@ -1,10 +1,12 @@
-# Federated Group - IBM Sterling EDI Application
+# Sterling-Style EDI Processing POC (Portfolio)
 
-A comprehensive Python EDI processing application designed specifically for IBM Sterling B2B Integrator environments. This application provides robust EDI file processing, validation, transformation, and integration capabilities for both X12 and EDIFACT standards.
+A lightweight Python proof-of-concept demonstrating EDI processing patterns relevant to IBM Sterling B2B Integrator environments, including parsing, validation, exception handling, and metrics.
 
-> **Portfolio Demonstration Piece** - This application was created to demonstrate EDI processing capabilities, IBM Sterling integration patterns, and enterprise application development skills relevant to IT leadership roles.
+> **Portfolio / Learning Project** - This repository was created to demonstrate how I ramp on EDI concepts and the operating model behind reliable trading-partner flows. It is not production-ready and not a replacement for IBM Sterling B2B Integrator.
 
-> **Federated Group Branding** - This application is customized for Federated Group's private brand sales and marketing operations across grocery, foodservice, drug, and convenience channels.
+> **Non-Affiliation** - This project is independent and is not affiliated with, endorsed by, or created at the request of any company, including Federated Group or IBM. See [DISCLAIMER.md](DISCLAIMER.md) for full details.
+
+> **Operating Model Focus** - This POC models Sterling-style orchestration and operating-model concepts; in a real environment I would leverage Sterling and/or an established EDI provider for production mappings and partner certifications.
 
 ## 🚀 Quick Start for Reviewers
 
@@ -55,15 +57,48 @@ graph LR
     Processor --> Reports
 ```
 
+## Capability Tiers
+
+### Tier 1 – Implemented for Demo
+- **X12 Parsing**: 850/855/856/810 transaction parsing and data extraction
+- **Validation**: Syntax and business rule validation with detailed error reporting
+- **Exception Handling**: Error handling patterns and retry logic
+- **Metrics Collection**: Processing metrics and performance tracking
+- **Power BI Dashboards**: Automated dashboard generation for metrics visualization
+- **File Monitoring**: Directory monitoring patterns for file processing
+
+### Tier 2 – Stubbed/Illustrative
+- **Sterling API Integration**: REST API client patterns (illustrative, not production-certified)
+- **Acumatica Sync**: ERP/CRM integration patterns (demonstration only)
+- **SQL Server Integration**: Data warehouse export patterns
+- **Security Audit**: Audit logging and compliance reporting patterns
+
+### Tier 3 – Future/Roadmap
+- **EDIFACT Transformation**: Full X12 ↔ EDIFACT conversion
+- **AI-Assisted Validations**: Machine learning validation patterns
+- **eCommerce Adapters**: Production-ready Shopify/Magento/WooCommerce connectors
+- **Advanced Monitoring**: Production-grade alerting and SLA tracking
+
+## Operating Model Focus
+
+This POC demonstrates key operating model concepts for reliable EDI flows:
+
+- **Trading Partner Onboarding**: Checklist and validation patterns
+- **Test Harness**: Automated testing for EDI transactions
+- **Exception Ownership**: Error handling, retry logic, and SLA patterns
+- **Master Data Dependencies**: Data validation and relationship awareness
+- **Monitoring KPIs**: Failure rate tracking, time-to-reprocess metrics, partner readiness indicators
+- **Reliability Patterns**: Logging, monitoring, and operational visibility
+
 ## Features
 
-- **Multi-Standard Support**: Handles both X12 and EDIFACT EDI formats seamlessly
-- **Comprehensive Validation**: Syntax and business rule validation with detailed error reporting
-- **Format Transformation**: Convert between X12 and EDIFACT formats
-- **Sterling Integration**: File system and API integration with IBM Sterling B2B Integrator
-- **File Monitoring**: Automatic monitoring of Sterling pickup directories
-- **Production-Ready**: Logging, error handling, retry logic, and monitoring capabilities
-- **Extensible**: Easy to add new transaction types and validation rules
+- **Multi-Standard Support**: Handles both X12 and EDIFACT EDI formats (Tier 1: X12 fully implemented, EDIFACT parsing demonstrated)
+- **Validation Patterns**: Syntax and business rule validation with detailed error reporting
+- **Format Transformation**: Convert between X12 and EDIFACT formats (illustrative patterns)
+- **Sterling-Style Integration**: File system and API integration patterns modeled after IBM Sterling B2B Integrator
+- **File Monitoring**: Automatic monitoring patterns for pickup directories
+- **Demonstration Patterns**: Logging, error handling, retry logic, and monitoring capabilities (POC-level, not production-ready)
+- **Extensible Architecture**: Easy to add new transaction types and validation rules
 
 ## Supported Transaction Types
 
