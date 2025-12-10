@@ -28,42 +28,11 @@ A lightweight Python proof-of-concept demonstrating EDI processing patterns rele
 
 ## Quick Architecture Overview
 
-```mermaid
-graph LR
-    subgraph input["Input"]
-        Files["EDI Files<br/>X12/EDIFACT"]
-        API["REST API<br/>HTTP Requests"]
-    end
-    
-    subgraph core["Core Processing"]
-        Processor["EDI Processor"]
-        Parser["Parsers<br/>X12/EDIFACT"]
-        Validator["Validator"]
-    end
-    
-    subgraph integrations["Integrations"]
-        Sterling["IBM Sterling"]
-        Acumatica["Acumatica<br/>ERP/CRM"]
-        ECommerce["eCommerce"]
-        SQL["SQL Server"]
-    end
-    
-    subgraph output["Output"]
-        PowerBI["Power BI<br/>Dashboards"]
-        Reports["Reports"]
-    end
-    
-    Files --> Processor
-    API --> Processor
-    Processor --> Parser
-    Parser --> Validator
-    Validator --> Sterling
-    Validator --> Acumatica
-    Validator --> ECommerce
-    Validator --> SQL
-    SQL --> PowerBI
-    Processor --> Reports
 ```
+Partner Files → Inbound Watch → Parse → Validate → Exceptions/Retry → Metrics → (Illustrative) ERP/DB Exports
+```
+
+For detailed architecture, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Capability Tiers
 
