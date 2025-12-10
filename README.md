@@ -265,6 +265,7 @@ sterling_edi_app/
 This module demonstrates integration patterns for Acumatica ERP/CRM (Tier 2). It is a demonstration scaffold and not production-certified.
 
 **Key Patterns Demonstrated:**
+
 - Illustrative Acumatica REST client patterns
 - Demonstrates patterns for syncing EDI 850 and 810
 - ERP integration patterns (Sales Orders, Purchase Orders, Inventory)
