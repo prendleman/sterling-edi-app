@@ -9,7 +9,7 @@ param(
     [string]$RepoName = "sterling-edi-app",
     
     [Parameter(Mandatory=$false)]
-    [string]$Description = "IBM Sterling EDI Application - Portfolio demonstration for Federated Group IT Director position",
+    [string]$Description = "Sterling-style EDI operating model POC (independent portfolio project)",
     
     [Parameter(Mandatory=$false)]
     [switch]$Private = $false

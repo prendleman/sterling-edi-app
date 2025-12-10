@@ -205,6 +205,8 @@ Key settings:
 - `api.base_url`: Sterling API base URL (if using API integration)
 - `api.username` / `api.password`: API credentials
 
+> **Note:** Delivery settings are demo placeholders and not intended for production credentials or partner-certified flows.
+
 See the configuration files for detailed options and comments.
 
 ## Architecture
@@ -264,7 +266,7 @@ This module demonstrates integration patterns for Acumatica ERP/CRM (Tier 2). It
 
 **Key Patterns Demonstrated:**
 - Illustrative Acumatica REST client patterns
-- Demonstrates patterns for syncing EDI 850 (PO) and 810 (Invoice) to Acumatica
+- Demonstrates patterns for syncing EDI 850 and 810
 - ERP integration patterns (Sales Orders, Purchase Orders, Inventory)
 - CRM integration patterns (Contacts, Opportunities, Activities)
 - EDI-to-CRM sync patterns (demonstration only)

@@ -27,7 +27,7 @@ If you have GitHub CLI installed:
 
 ```bash
 # Create a new repository on GitHub
-gh repo create sterling-edi-app --public --description "IBM Sterling EDI Application - Portfolio demonstration for Federated Group IT Director position"
+gh repo create sterling-edi-app --public --description "Sterling-style EDI operating model POC (independent portfolio project)"
 
 # Add the remote
 git remote add origin https://github.com/YOUR_USERNAME/sterling-edi-app.git
@@ -42,7 +42,7 @@ git push -u origin main
 1. **Create a new repository on GitHub:**
    - Go to https://github.com/new
    - Repository name: `sterling-edi-app` (or your preferred name)
-   - Description: "IBM Sterling EDI Application - Portfolio demonstration for Federated Group IT Director position"
+   - Description: "Sterling-style EDI operating model POC (independent portfolio project)"
    - Choose Public or Private
    - Do NOT initialize with README, .gitignore, or license (we already have these)
    - Click "Create repository"

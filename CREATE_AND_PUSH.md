@@ -4,7 +4,7 @@
 
 1. Go to: https://github.com/new
 2. Repository name: `sterling-edi-app`
-3. Description: `IBM Sterling EDI Application - Portfolio demonstration for Federated Group IT Director position`
+3. Description: `Sterling-style EDI operating model POC (independent portfolio project)`
 4. **Select: Private** (important!)
 5. **DO NOT** check "Initialize with README" (we already have files)
 6. Click **Create repository**
