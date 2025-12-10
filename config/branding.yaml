@@ -1,0 +1,55 @@
+# Federated Group Branding Configuration
+
+branding:
+  # Company Information
+  company_name: "Federated Group"
+  company_tagline: "LIFE INSPIRES BRANDS"
+  company_description: "We help grow your food business. A private brand sales and marketing company serving grocery, foodservice, drug, and convenience channels."
+  
+  # Logo Paths
+  # Place logo files in assets/branding/ directory
+  logos:
+    main: "assets/branding/logo.png"              # Main logo (transparent background)
+    white: "assets/branding/logo_white.png"       # White version (for dark backgrounds)
+    black: "assets/branding/logo_black.png"       # Black version (for light backgrounds)
+    icon: "assets/branding/logo_icon.png"         # Icon/favicon version (64x64 or 128x128)
+    horizontal: "assets/branding/logo_horizontal.png"  # Horizontal layout version
+  
+  # Brand Colors
+  # Update with actual Federated Group brand colors
+  colors:
+    primary: "#1B365D"      # Primary brand color (e.g., Navy blue)
+    secondary: "#C4962E"   # Secondary brand color (e.g., Gold)
+    accent: "#4A9B4A"       # Accent color (e.g., Green)
+    success: "#4A9B4A"      # Success/positive indicators
+    warning: "#FF9800"      # Warning indicators
+    error: "#D32F2F"        # Error/negative indicators
+    text: "#333333"         # Primary text color
+    text_light: "#666666"   # Secondary text color
+    background: "#FFFFFF"   # Primary background
+    background_light: "#F5F5F5"  # Light background
+  
+  # Typography
+  fonts:
+    heading: "Arial, 'Helvetica Neue', Helvetica, sans-serif"
+    body: "Arial, 'Helvetica Neue', Helvetica, sans-serif"
+    code: "'Courier New', Courier, monospace"
+  
+  # Contact Information
+  contact:
+    website: "https://www.fedbrands.com"
+    email: "sales@fedgroup.com"
+    consumer_email: "consumerconcerns@fedgroup.com"
+    phone: "847-577-1200"
+    address: "3030 Salt Creek Lane, Suite 201, Arlington Heights, Illinois 60005"
+  
+  # Branding Usage
+  usage:
+    # Where to display branding
+    dashboards: true          # Power BI dashboards
+    api_responses: true       # API server responses
+    documentation: true       # Documentation headers
+    reports: true              # Generated reports
+    emails: true               # Email templates
+    cli: false                 # CLI output (optional)
+

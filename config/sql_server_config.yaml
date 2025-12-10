@@ -1,0 +1,37 @@
+# SQL Server Configuration
+
+# SQL Server database integration
+sql_server:
+  # Enable SQL Server integration
+  enabled: false
+  
+  # SQL Server instance
+  # Format: 'server' or 'server\\instance'
+  server: null
+  
+  # Database name
+  database: null
+  
+  # Authentication
+  use_windows_auth: true
+  username: null
+  password: null
+  
+  # ODBC Driver (default: ODBC Driver 17 for SQL Server)
+  driver: "ODBC Driver 17 for SQL Server"
+  
+  # Connection timeout (seconds)
+  timeout: 30
+  
+  # Auto-create tables
+  auto_create_tables: true
+  
+  # Data warehouse settings
+  data_warehouse:
+    # Enable data warehouse export
+    enabled: false
+    # Warehouse database name
+    database: null
+    # Export interval (minutes)
+    export_interval: 60
+

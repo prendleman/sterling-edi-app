@@ -1,0 +1,382 @@
+# Federated Group - IBM Sterling EDI Application
+
+A comprehensive Python EDI processing application designed specifically for IBM Sterling B2B Integrator environments. This application provides robust EDI file processing, validation, transformation, and integration capabilities for both X12 and EDIFACT standards.
+
+> **Portfolio Demonstration Piece** - This application was created to demonstrate EDI processing capabilities, IBM Sterling integration patterns, and enterprise application development skills relevant to IT leadership roles.
+
+> **Federated Group Branding** - This application is customized for Federated Group's private brand sales and marketing operations across grocery, foodservice, drug, and convenience channels.
+
+## 🚀 Quick Start for Reviewers
+
+**New to this package?** Start here:
+1. **5-Minute Overview**: Read `EXECUTIVE_SUMMARY.md`
+2. **Quick Test**: Follow `QUICK_START.md` 
+3. **Deep Dive**: Review `REVIEWER_GUIDE.md` for evaluation guidance
+
+**For Technical Evaluators**: See `REVIEWER_GUIDE.md` for code review checklist  
+**For Leadership Evaluators**: See `EXECUTIVE_SUMMARY.md` for strategic capabilities overview
+
+## Quick Architecture Overview
+
+```mermaid
+graph LR
+    subgraph input["Input"]
+        Files["EDI Files<br/>X12/EDIFACT"]
+        API["REST API<br/>HTTP Requests"]
+    end
+    
+    subgraph core["Core Processing"]
+        Processor["EDI Processor"]
+        Parser["Parsers<br/>X12/EDIFACT"]
+        Validator["Validator"]
+    end
+    
+    subgraph integrations["Integrations"]
+        Sterling["IBM Sterling"]
+        Acumatica["Acumatica<br/>ERP/CRM"]
+        ECommerce["eCommerce"]
+        SQL["SQL Server"]
+    end
+    
+    subgraph output["Output"]
+        PowerBI["Power BI<br/>Dashboards"]
+        Reports["Reports"]
+    end
+    
+    Files --> Processor
+    API --> Processor
+    Processor --> Parser
+    Parser --> Validator
+    Validator --> Sterling
+    Validator --> Acumatica
+    Validator --> ECommerce
+    Validator --> SQL
+    SQL --> PowerBI
+    Processor --> Reports
+```
+
+## Features
+
+- **Multi-Standard Support**: Handles both X12 and EDIFACT EDI formats seamlessly
+- **Comprehensive Validation**: Syntax and business rule validation with detailed error reporting
+- **Format Transformation**: Convert between X12 and EDIFACT formats
+- **Sterling Integration**: File system and API integration with IBM Sterling B2B Integrator
+- **File Monitoring**: Automatic monitoring of Sterling pickup directories
+- **Production-Ready**: Logging, error handling, retry logic, and monitoring capabilities
+- **Extensible**: Easy to add new transaction types and validation rules
+
+## Supported Transaction Types
+
+### X12
+- **850**: Purchase Order
+- **855**: Purchase Order Acknowledgment
+- **810**: Invoice
+- **856**: Ship Notice/Manifest
+
+### EDIFACT
+- **ORDERS**: Purchase Order
+- **DESADV**: Despatch Advice
+- **INVOIC**: Invoice
+
+## Deployment Options
+
+### Docker Deployment (Recommended)
+
+```bash
+# Build and run with Docker Compose
+docker-compose up -d
+
+# Check status
+docker-compose ps
+
+# View logs
+docker-compose logs -f
+
+# Stop
+docker-compose down
+```
+
+The API will be available at `http://localhost:5000`
+
+### Standalone Deployment
+
+See [DEPLOYMENT.md](docs/DEPLOYMENT.md) for detailed instructions.
+
+### REST API
+
+The application includes a REST API server. See [API_REFERENCE_REST.md](docs/API_REFERENCE_REST.md) for complete documentation.
+
+```bash
+# Start API server
+python -m src.api_server
+
+# Or with Docker
+docker-compose up
+```
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.8 or higher
+- IBM Sterling B2B Integrator (for integration features)
+
+### Installation
+
+1. Extract the application package:
+```bash
+unzip sterling_edi_app.zip
+cd sterling_edi_app
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Configure the application:
+   - Edit `config/config.yaml` for general settings
+   - Edit `config/sterling_config.yaml` for Sterling-specific settings
+
+### Basic Usage
+
+#### Process a single file:
+```bash
+python main.py process --file path/to/edi/file.x12
+```
+
+#### Process all files in a directory:
+```bash
+python main.py process --directory path/to/edi/directory
+```
+
+#### Validate an EDI file:
+```bash
+python main.py validate --file path/to/edi/file.x12
+```
+
+#### Monitor directories for new files:
+```bash
+python main.py monitor
+```
+
+#### Generate Power BI dashboard:
+```bash
+# Generate dashboard with sample data (for testing)
+python main.py dashboard --generate-sample-metrics
+
+# Generate dashboard with real processing metrics
+python main.py dashboard
+```
+
+#### Generate Financial Dashboards:
+```bash
+# Generate all financial dashboards (P&L, Sales, Inventory, AR/AP)
+python main.py financial-dashboards
+```
+
+## Configuration
+
+### Application Configuration (`config/config.yaml`)
+
+Key settings:
+- `processing.validate`: Enable/disable validation
+- `processing.deliver`: Enable/disable automatic delivery to Sterling
+- `monitoring.enabled`: Enable file monitoring
+- `monitoring.watch_directories`: Directories to monitor
+
+### Sterling Configuration (`config/sterling_config.yaml`)
+
+Key settings:
+- `file_system.pickup_directories`: Sterling pickup directories
+- `file_system.delivery_directories`: Sterling delivery directories
+- `api.base_url`: Sterling API base URL (if using API integration)
+- `api.username` / `api.password`: API credentials
+
+See the configuration files for detailed options and comments.
+
+## Architecture
+
+The application consists of the following main components:
+
+- **EDI Processor**: Main orchestrator for processing pipeline
+- **X12 Parser**: Parses X12 EDI files
+- **EDIFACT Parser**: Parses EDIFACT EDI files
+- **EDI Validator**: Validates EDI syntax and business rules
+- **EDI Transformer**: Converts between formats and applies mappings
+- **File Monitor**: Monitors directories for new files
+- **Sterling Integration**: File system and API integration
+
+## Project Structure
+
+```
+sterling_edi_app/
+├── README.md                 # This file
+├── requirements.txt          # Python dependencies
+├── main.py                   # Application entry point
+├── config/                   # Configuration files
+│   ├── config.yaml
+│   └── sterling_config.yaml
+├── src/                      # Source code
+│   ├── edi_processor.py
+│   ├── x12_parser.py
+│   ├── edifact_parser.py
+│   ├── edi_validator.py
+│   ├── edi_transformer.py
+│   ├── file_monitor.py
+│   ├── sterling_integration.py
+│   ├── acumatica_connector.py  # Acumatica ERP & CRM connector
+│   ├── acumatica_crm_integration.py  # CRM-specific integration layer
+│   ├── ecommerce_connector.py  # eCommerce platform connector
+│   ├── ai_automation.py  # AI validation and automation
+│   ├── sql_server_integration.py  # SQL Server database integration
+│   ├── metrics_collector.py  # Metrics tracking
+│   ├── powerbi_dashboard.py  # Power BI dashboard generator
+│   ├── powerbi_financial_dashboards.py  # Financial dashboards generator
+│   ├── generate_sample_metrics.py  # Sample data generator
+│   └── utils/
+├── tests/                    # Unit tests
+│   ├── test_x12_parser.py
+│   ├── test_edifact_parser.py
+│   ├── test_validator.py
+│   └── sample_data/
+└── docs/                     # Documentation
+    ├── DEPLOYMENT.md
+    ├── ARCHITECTURE.md
+    └── API_REFERENCE.md
+```
+
+## Acumatica ERP & CRM Integration
+
+The application includes a comprehensive Acumatica ERP and CRM connector:
+
+### ERP Functionality
+- **REST API Integration**: Full Acumatica REST API client
+- **EDI Transaction Sync**: Automatically sync EDI 850 (PO) and 810 (Invoice) to Acumatica
+- **Sales Orders**: Create and manage sales orders
+- **Purchase Orders**: Create and manage purchase orders
+- **Inventory Management**: Query inventory items and quantities
+- **Customer/Vendor Management**: Access customer and vendor data
+- **Financial Transactions**: Query AR/AP transactions
+
+### CRM Functionality (Acumatica Built-in CRM)
+- **Contacts**: Create, read, and manage contacts
+- **Opportunities**: Full opportunity lifecycle management (create, update, pipeline tracking)
+- **Activities**: Log calls, meetings, tasks, and EDI processing activities
+- **Cases**: Create and manage support cases
+- **Leads**: Lead management with conversion to opportunities
+- **Accounts**: Account management with 360-degree view
+- **Sales Pipeline**: Pipeline summary and analytics
+- **Account 360 View**: Combined CRM + ERP data for comprehensive account insights
+
+### CRM Integration Features
+- **EDI-to-CRM Sync**: Automatically sync EDI customer data to CRM contacts/accounts
+- **Opportunity Creation**: Create CRM opportunities from EDI 850 Purchase Orders
+- **Activity Logging**: Automatically log EDI processing as CRM activities
+- **Account 360 View**: Get complete account view combining CRM and ERP data
+
+### Configuration
+
+Edit `config/acumatica_config.yaml`:
+```yaml
+acumatica:
+  enabled: true
+  base_url: "https://your-acumatica-instance.com"
+  username: "your_username"
+  password: "your_password"
+  auto_sync: true  # Auto-sync EDI transactions
+```
+
+## Power BI Dashboards
+
+### EDI Processing Dashboard
+
+The application includes a Power BI dashboard generator that creates comprehensive visualizations of EDI processing metrics:
+
+- **Pass/Fail Metrics**: Success rates, failure analysis
+- **Transaction Analytics**: Breakdown by transaction type (850, 855, 810, etc.)
+- **Time Series**: Processing trends over time
+- **Error Analysis**: Detailed error categorization and trends
+- **Trading Partner Performance**: Statistics per trading partner
+
+### Generating the Dashboard
+
+1. Process some EDI files (or generate sample metrics):
+```bash
+python main.py dashboard --generate-sample-metrics
+```
+
+2. Generate the Power BI dashboard:
+```bash
+python main.py dashboard
+```
+
+3. Open in Power BI Desktop:
+   - Open Power BI Desktop
+   - File > Open > Browse
+   - Navigate to `dashboards/EDIProcessingDashboard.pbip`
+   - The dashboard will load with your metrics
+
+### Financial Dashboards
+
+The application also generates multiple financial-focused Power BI dashboards:
+
+- **Financial Metrics Dashboard**: P&L analysis, budget variance, cash flow
+- **Sales Analytics Dashboard**: Revenue trends, customer analysis, product performance
+- **Inventory & Operations Dashboard**: Stock levels, turnover, supplier metrics
+- **AR/AP Dashboard**: Accounts receivable/payable aging, payment trends
+
+Generate all financial dashboards:
+```bash
+python main.py financial-dashboards
+```
+
+Dashboards are created in `dashboards/` directory and can be opened in Power BI Desktop.
+
+## Testing
+
+Run unit tests:
+```bash
+python -m pytest tests/
+```
+
+Or run specific test:
+```bash
+python -m pytest tests/test_x12_parser.py
+```
+
+## Logging
+
+Logs are written to the `logs/` directory with automatic rotation. Log level can be configured in `config/config.yaml`.
+
+## Error Handling
+
+- Failed files are moved to an `error/` directory
+- Successfully processed files are moved to a `processed/` directory
+- Detailed error messages are logged and included in processing results
+
+## Deployment
+
+For detailed deployment instructions, see [DEPLOYMENT.md](docs/DEPLOYMENT.md).
+
+## License
+
+This application is provided as-is for demonstration and portfolio purposes.
+
+## Power BI Dashboard
+
+The application includes automated Power BI dashboard generation. See [docs/DASHBOARD.md](docs/DASHBOARD.md) for detailed instructions.
+
+Quick start:
+```bash
+# Generate dashboard with sample data
+python main.py dashboard --generate-sample-metrics
+
+# Generate dashboard with real metrics
+python main.py dashboard
+```
+
+## Support
+
+For questions or issues, refer to the deployment documentation or review the code comments for implementation details.
+

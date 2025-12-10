@@ -1,0 +1,96 @@
+# IBM Sterling B2B Integrator Configuration
+
+# Sterling file system integration
+file_system:
+  # Pickup directories (where Sterling places incoming files)
+  pickup_directories:
+    - "C:/Sterling/pickup"
+    - "/opt/sterling/pickup"
+    # Add your Sterling pickup directories here
+  
+  # Delivery directories (where to place processed files for Sterling)
+  delivery_directories:
+    - "C:/Sterling/delivery"
+    - "/opt/sterling/delivery"
+    # Add your Sterling delivery directories here
+  
+  # Processed directory (relative to pickup directory)
+  processed_directory: "processed"
+  
+  # Error directory (relative to pickup directory)
+  error_directory: "error"
+  
+  # Archive directory (optional, for long-term storage)
+  archive_directory: null
+
+# Sterling API integration
+api:
+  # Enable API integration
+  enabled: false
+  
+  # Sterling B2B Integrator API base URL
+  # Example: https://sterling-server.example.com:9080
+  base_url: null
+  
+  # API authentication
+  username: null
+  password: null
+  
+  # API timeout (seconds)
+  timeout: 30
+  
+  # API endpoints (defaults, usually don't need to change)
+  endpoints:
+    submit_document: "/api/v1/documents"
+    document_status: "/api/v1/documents/{document_id}/status"
+    trading_partners: "/api/v1/trading-partners"
+    trading_partner_config: "/api/v1/trading-partners/{trading_partner}"
+
+# Trading partner configurations
+trading_partners:
+  # Example trading partner configuration
+  # PARTNER_NAME:
+  #   pickup_directory: "C:/Sterling/pickup/PARTNER_NAME"
+  #   delivery_directory: "C:/Sterling/delivery/PARTNER_NAME"
+  #   edi_type: "X12"  # or "EDIFACT"
+  #   transaction_types:
+  #     - "850"  # Purchase Order
+  #     - "855"  # PO Acknowledgment
+  #   validation_rules: "strict"
+  #   transformations:
+  #     enabled: false
+
+# Sterling-specific settings
+sterling:
+  # File naming convention
+  # Variables: {trading_partner}, {document_type}, {timestamp}, {sequence}
+  filename_template: "{trading_partner}_{document_type}_{timestamp}"
+  
+  # File encoding
+  file_encoding: "utf-8"
+  
+  # Line ending format (unix or windows)
+  line_ending: "unix"
+  
+  # Enable file locking
+  file_locking: true
+  
+  # Wait for file completion (seconds)
+  file_completion_timeout: 30
+
+# Monitoring and logging
+monitoring:
+  # Enable Sterling-specific monitoring
+  enabled: true
+  
+  # Log all file operations
+  log_file_operations: true
+  
+  # Log API calls
+  log_api_calls: true
+  
+  # Alert on processing errors
+  alert_on_errors: false
+  # Alert email (if alert_on_errors is true)
+  alert_email: null
+

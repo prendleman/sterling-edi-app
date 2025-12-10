@@ -1,0 +1,73 @@
+# Acumatica ERP Configuration
+
+# Acumatica API integration
+acumatica:
+  # Enable Acumatica integration
+  enabled: false
+  
+  # Acumatica instance URL
+  # Example: https://acumatica.example.com
+  base_url: null
+  
+  # API authentication
+  username: null
+  password: null
+  
+  # Tenant name (if multi-tenant)
+  tenant: null
+  
+  # Branch ID (if multi-branch)
+  branch: null
+  
+  # API timeout (seconds)
+  timeout: 30
+  
+  # Auto-sync EDI transactions to Acumatica
+  auto_sync: false
+  
+  # Enable CRM integration
+  crm_enabled: true
+  
+  # Sync settings
+  sync:
+    # Sync 850 (Purchase Order) to Acumatica PO
+    sync_850_to_po: true
+    # Sync 810 (Invoice) to Acumatica AR Invoice
+    sync_810_to_invoice: true
+    # Sync 855 (PO Acknowledgment) to Acumatica
+    sync_855_to_ack: false
+  
+  # Field mappings (EDI to Acumatica)
+  field_mappings:
+    # Purchase Order mappings (850)
+    purchase_order:
+      po_number: "OrderNbr"
+      po_date: "OrderDate"
+      vendor_id: "VendorID"
+      line_items: "Details"
+    
+    # Invoice mappings (810)
+    invoice:
+      invoice_number: "ReferenceNbr"
+      invoice_date: "DocDate"
+      customer_id: "CustomerID"
+      line_items: "Details"
+
+# Acumatica entity endpoints (defaults)
+endpoints:
+  # ERP endpoints
+  sales_orders: "/entity/Default/20.200.001/SalesOrder"
+  purchase_orders: "/entity/Default/20.200.001/PurchaseOrder"
+  inventory_items: "/entity/Default/20.200.001/InventoryItem"
+  customers: "/entity/Default/20.200.001/Customer"
+  vendors: "/entity/Default/20.200.001/Vendor"
+  ar_transactions: "/entity/Default/20.200.001/AccountsReceivable"
+  ap_transactions: "/entity/Default/20.200.001/AccountsPayable"
+  # CRM endpoints
+  contacts: "/entity/Default/20.200.001/Contact"
+  opportunities: "/entity/Default/20.200.001/Opportunity"
+  activities: "/entity/Default/20.200.001/Activity"
+  cases: "/entity/Default/20.200.001/Case"
+  leads: "/entity/Default/20.200.001/Lead"
+  accounts: "/entity/Default/20.200.001/Account"
+

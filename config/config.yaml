@@ -1,0 +1,91 @@
+# EDI Application Configuration
+
+# Application settings
+app:
+  name: "IBM Sterling EDI Processor"
+  version: "1.0.0"
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_directory: "logs"
+
+# EDI Processing settings
+processing:
+  # Enable validation by default
+  validate: true
+  # Enable transformation by default
+  transform: false
+  # Enable automatic delivery to Sterling
+  deliver: true
+  # File extensions to process
+  file_extensions:
+    - ".edi"
+    - ".x12"
+    - ".edifact"
+    - ".txt"
+  # Maximum file size (bytes, 0 = unlimited)
+  max_file_size: 10485760  # 10MB
+
+# File monitoring settings
+monitoring:
+  # Enable file monitoring
+  enabled: true
+  # Watch directories (will be overridden by Sterling config)
+  watch_directories: []
+  # Polling interval for polling monitor (seconds)
+  poll_interval: 5.0
+  # File stability delay (seconds)
+  stability_delay: 2.0
+  # Monitor subdirectories recursively
+  recursive: true
+
+# Validation settings
+validation:
+  # Strict validation mode (fail on warnings)
+  strict_mode: false
+  # Custom validation rules file path
+  custom_rules: null
+
+# Transformation settings
+transformations:
+  # Enable format conversion
+  enable_conversion: false
+  # Default target format (X12 or EDIFACT)
+  default_target_format: "X12"
+  # Custom mapping configuration
+  mappings: {}
+
+# Error handling
+error_handling:
+  # Retry failed files
+  retry_enabled: true
+  # Maximum retry attempts
+  max_retries: 3
+  # Retry delay (seconds)
+  retry_delay: 60
+  # Move failed files to error directory
+  move_to_error: true
+
+# Performance settings
+performance:
+  # Number of parallel processing threads
+  max_workers: 4
+  # Batch processing size
+  batch_size: 10
+
+# Metrics collection settings
+metrics:
+  # Enable metrics collection
+  enabled: true
+  # Storage path for metrics
+  storage_path: "metrics"
+  # Use SQLite database (True) or JSON files (False)
+  use_database: true
+
+# Acumatica ERP integration
+acumatica:
+  # Enable Acumatica integration
+  enabled: false
+  # Base URL (configure in acumatica_config.yaml)
+  base_url: null
+  # Auto-sync EDI transactions
+  auto_sync: false
+

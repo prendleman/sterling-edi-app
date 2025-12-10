@@ -1,0 +1,41 @@
+# eCommerce Platform Configuration
+
+# eCommerce platform integration
+ecommerce:
+  # Enable eCommerce integration
+  enabled: false
+  
+  # Platform type: 'shopify', 'magento', or 'woocommerce'
+  platform: null
+  
+  # Platform API base URL
+  # Shopify: https://your-store.myshopify.com
+  # Magento: https://your-store.com/rest
+  # WooCommerce: https://your-store.com/wp-json/wc/v3
+  base_url: null
+  
+  # API credentials
+  api_key: null
+  api_secret: null
+  access_token: null
+  
+  # Auto-sync settings
+  auto_sync:
+    # Sync orders from eCommerce to Acumatica
+    sync_orders_to_acumatica: true
+    # Sync inventory from Acumatica to eCommerce
+    sync_inventory_to_ecommerce: true
+    # Sync products from Acumatica to eCommerce
+    sync_products_to_ecommerce: false
+  
+  # Sync frequency (minutes)
+  sync_interval: 15
+  
+  # Order status mapping (eCommerce -> Acumatica)
+  order_status_mapping:
+    pending: "New"
+    processing: "InProcess"
+    completed: "Completed"
+    cancelled: "Cancelled"
+    refunded: "Refunded"
+

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  edi-processor:
+    build: .
+    container_name: edi-processor
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./config:/app/config
+      - ./logs:/app/logs
+      - ./metrics:/app/metrics
+      - ./dashboards:/app/dashboards
+      - ./tests/sample_data:/app/tests/sample_data
+    environment:
+      - PYTHONUNBUFFERED=1
+      - FLASK_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: SQL Server container (for development)
+  # sql-server:
+  #   image: mcr.microsoft.com/mssql/server:2022-latest
+  #   container_name: edi-sql-server
+  #   environment:
+  #     - ACCEPT_EULA=Y
+  #     - SA_PASSWORD=YourStrong@Passw0rd
+  #   ports:
+  #     - "1433:1433"
+  #   volumes:
+  #     - sql-data:/var/opt/mssql
+
+# volumes:
+#   sql-data:
+
