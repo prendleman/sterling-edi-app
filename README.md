@@ -8,17 +8,13 @@ A lightweight Python proof-of-concept demonstrating EDI processing patterns rele
 
 > **Operating Model Focus** - This POC models Sterling-style orchestration and operating-model concepts; in a real environment I would leverage Sterling and/or an established EDI provider for production mappings and partner certifications.
 
-## What This Is (In One Screen)
+## What This Is (For Reviewers)
 
-**Purpose:** Learning/portfolio POC for Sterling-style EDI operating model
-
-**Tier 1 Demo:** X12 850/855/856/810 parsing + validation + exception patterns
-
-**Shows:** Monitoring/metrics + Power BI-style visibility
-
-**Not:** Production EDI translator or Sterling replacement
-
-**Why It Matters:** Reduces exceptions, speeds partner onboarding, protects order-to-cash
+- **Purpose:** Portfolio / learning POC for Sterling-style EDI operating model
+- **Tier 1 Demo:** X12 850/855/856/810 parsing, validation, exception patterns, metrics
+- **Focus:** Exception reduction, monitoring, and partner onboarding reliability
+- **Not:** A production EDI translator or a replacement for IBM Sterling B2B Integrator
+- **Why It Matters:** Models how I would modernize and stabilize EDI/ERP/analytics in a real environment
 
 ## 🚀 Quick Start for Reviewers
 
