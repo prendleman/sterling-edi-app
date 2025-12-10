@@ -273,49 +273,21 @@ This module demonstrates integration patterns for Acumatica ERP/CRM (Tier 2). It
 
 ## Power BI Dashboards
 
-### EDI Processing Dashboard
+The application includes Power BI dashboard generators for EDI processing metrics and financial analytics:
 
-The application includes a Power BI dashboard generator that creates visualizations of EDI processing metrics:
+- **EDI Processing Dashboard**: Pass/fail metrics, processing statistics, error analysis, trading partner performance
+- **Financial Dashboards**: P&L analysis, sales analytics, inventory metrics, AR/AP reporting
 
-- **Pass/Fail Metrics**: Success rates, failure analysis
-- **Transaction Analytics**: Breakdown by transaction type (850, 855, 810, etc.)
-- **Time Series**: Processing trends over time
-- **Error Analysis**: Detailed error categorization and trends
-- **Trading Partner Performance**: Statistics per trading partner
-
-### Generating the Dashboard
-
-1. Process some EDI files (or generate sample metrics):
+Generate dashboards:
 ```bash
+# EDI processing dashboard
 python main.py dashboard --generate-sample-metrics
-```
 
-2. Generate the Power BI dashboard:
-```bash
-python main.py dashboard
-```
-
-3. Open in Power BI Desktop:
-   - Open Power BI Desktop
-   - File > Open > Browse
-   - Navigate to `dashboards/EDIProcessingDashboard.pbip`
-   - The dashboard will load with your metrics
-
-### Financial Dashboards
-
-The application also generates multiple financial-focused Power BI dashboards:
-
-- **Financial Metrics Dashboard**: P&L analysis, budget variance, cash flow
-- **Sales Analytics Dashboard**: Revenue trends, customer analysis, product performance
-- **Inventory & Operations Dashboard**: Stock levels, turnover, supplier metrics
-- **AR/AP Dashboard**: Accounts receivable/payable aging, payment trends
-
-Generate all financial dashboards:
-```bash
+# Financial dashboards
 python main.py financial-dashboards
 ```
 
-Dashboards are created in `dashboards/` directory and can be opened in Power BI Desktop.
+**See:** [docs/DASHBOARD.md](docs/DASHBOARD.md) for detailed dashboard documentation and configuration.
 
 ## Testing
 
