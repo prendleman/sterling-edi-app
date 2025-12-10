@@ -1,6 +1,27 @@
 # Push to GitHub - Instructions
 
-## Option 1: Using GitHub CLI (Recommended)
+## Step 1: Configure Git with Your GitHub Account
+
+**IMPORTANT:** Before pushing, configure git with your GitHub account:
+
+```powershell
+# Run the setup script
+.\setup_git_config.ps1
+```
+
+This will prompt you for:
+- Your GitHub username
+- Your GitHub email address
+
+Or manually configure:
+```powershell
+git config --global user.name "YOUR_GITHUB_USERNAME"
+git config --global user.email "YOUR_GITHUB_EMAIL"
+```
+
+## Step 2: Create GitHub Repository
+
+### Option 1: Using GitHub CLI (Recommended)
 
 If you have GitHub CLI installed:
 
@@ -16,7 +37,7 @@ git branch -M main
 git push -u origin main
 ```
 
-## Option 2: Manual GitHub Setup
+### Option 2: Manual GitHub Setup
 
 1. **Create a new repository on GitHub:**
    - Go to https://github.com/new
@@ -34,13 +55,28 @@ git push -u origin main
    git push -u origin main
    ```
 
-## Option 3: Using GitHub Desktop
+### Option 3: Using GitHub Desktop
 
 1. Open GitHub Desktop
 2. File → Add Local Repository
 3. Select: `G:\My Drive\Federated_Group\sterling_edi_app`
 4. Publish repository → Choose name and visibility
 5. Click "Publish repository"
+
+## Step 3: Push to GitHub
+
+After creating the repository, push your code:
+
+```powershell
+# Add remote (replace YOUR_USERNAME and REPO_NAME)
+git remote add origin https://github.com/YOUR_USERNAME/REPO_NAME.git
+
+# Rename branch to main
+git branch -M main
+
+# Push to GitHub
+git push -u origin main
+```
 
 ## After Pushing
 
